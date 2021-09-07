@@ -1,8 +1,8 @@
 [bits 16]
 
 gdt_nulldesc:
-    dd 0x0
-    dd 0x0
+    dd 0
+    dd 0
 
 gdt_codedesc:
     dw 0xFFFF
