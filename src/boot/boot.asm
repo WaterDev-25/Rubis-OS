@@ -4,8 +4,10 @@
 KERNEL_OFFSET equ 0x1000
 
 mov [BOOT_DRIVE], dl
+
 mov bp, 0x7c00
 mov sp, bp
+
 call load_boot
 call execute_boot
 
@@ -26,8 +28,10 @@ execute_boot:
     call KERNEL_OFFSET
     jmp $
 
+
 %include "boot/disk/disk_read.asm"
 %include "boot/print/print_string.asm"
+%include "boot/pm/gdt.asm"
 
 BOOT_DRIVE: db 0
 LOADING_BOOT_MSG: db "Loading boot", 10, 13, 0
