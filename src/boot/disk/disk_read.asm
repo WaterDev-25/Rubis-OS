@@ -1,3 +1,5 @@
+[bits 16]
+
 disk_read:
     pusha
     push dx
