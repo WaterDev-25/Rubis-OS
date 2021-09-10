@@ -7,7 +7,7 @@ romimage: file="D:\Users\Matteo\Desktop\Projects\WaterOS\WaterOS Rewrite\bochs\B
 vgaromimage: file="D:\Users\Matteo\Desktop\Projects\WaterOS\WaterOS Rewrite\bochs\Bochs-2.7/VGABIOS-lgpl-latest"
 boot: floppy
 floppy_bootsig_check: disabled=0
-floppya: type=1_2, 1_2="D:\Users\Matteo\Desktop\Projects\WaterOS\WaterOS Rewrite\build\bootloader.bin", status=inserted, write_protected=0
+floppya: type=1_2, 1_2="D:\Users\Matteo\Desktop\Projects\WaterOS\WaterOS Rewrite\build\os.bin", status=inserted, write_protected=0
 # no floppyb
 ata0: enabled=true, ioaddr1=0x1f0, ioaddr2=0x3f0, irq=14
 ata0-master: type=none
