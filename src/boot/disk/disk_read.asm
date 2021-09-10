@@ -18,6 +18,7 @@ disk_read:
     jne disk_read_error
 
     popa
+    jmp after_disk_read
     ret
 
 disk_read_error:

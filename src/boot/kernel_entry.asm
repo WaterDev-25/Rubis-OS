@@ -1,6 +1,6 @@
 global _start
 
-[bits 16]
+[bits 32]
 [extern loader_main]
 
 _start:

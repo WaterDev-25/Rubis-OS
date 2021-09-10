@@ -1,13 +1,7 @@
-extern "C" void loader_main(){
-    for(int i = 0; i < 26; i++){
-        char c = 0x41 + i;
+#include "text_print.cpp"
 
-        asm(
-            "mov %0, %%al;"
-            "mov $0x0E, %%ah;"
-            "int $0x10"
-            :
-            : "r" (c)
-        );
-    }
+extern "C" void loader_main(){
+    SetCursorPosition(PositionFromCoords(0, 0));
+    print("Hello, World!\n\rtest");
+    return;
 }
