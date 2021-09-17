@@ -23,4 +23,10 @@ init_pm:
     mov ebp, 0x90000
     mov esp, ebp
     
+    ; UNCOMMENT LATER
+    ;mov esi, mode_info_block
+    ;mov edi, 9000h
+    ;mov ecx, 64
+    ;rep movsd
+
     call begin_pm
