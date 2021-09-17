@@ -5,4 +5,4 @@
 
  `compile.bat`  
  or for linux  
- `compile.sh`  
+ `./compile.sh`  
