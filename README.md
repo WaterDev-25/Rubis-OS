@@ -3,6 +3,6 @@
 
  To run this you need to have gcc and nasm on your computer.
 
- ####compile.bat
+ `compile.bat`
  or for linux
- ####compile.sh
+ `compile.sh`
