@@ -1,7 +1,7 @@
 [org 0x7c00]
 [bits 16]
 
-KERNEL_LOCATION equ 0x1000
+KERNEL_LOCATION equ 0x8000
 
 mov [BOOT_DISK], dl
 

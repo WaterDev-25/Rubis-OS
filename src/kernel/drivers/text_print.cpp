@@ -1,6 +1,6 @@
 #pragma once
 #include "port_io.cpp"
-#include "typedefs.cpp"
+#include "../utils/typedefs.cpp"
 #define VGA_MEMORY (uint8_t*)0xb8000
 #define VGA_WIDTH 80
 

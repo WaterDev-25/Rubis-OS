@@ -20,8 +20,9 @@ init_pm:
     mov fs, ax
     mov gs, ax
 
-    mov ebp, 0x90000
-    mov esp, ebp
+; DECOMMENT
+    ;mov ebp, 0x90000
+    ;mov esp, ebp
     
     ; UNCOMMENT LATER
     ;mov esi, mode_info_block
