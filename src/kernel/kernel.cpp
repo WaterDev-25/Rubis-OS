@@ -3,6 +3,7 @@
 
 extern "C" void loader_main(){ 
     SetCursorPosition(PositionFromCoords(0, 0));
+    print("WaterOS x86");
 
     return;
 }
