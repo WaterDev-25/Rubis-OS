@@ -9,7 +9,9 @@ extern "C" void loader_main(){
     idt_install();
     isrs_install();
     irq_install();
+
     asm volatile("sti");
+    
     timer_install();
     keyboard_install();
 
