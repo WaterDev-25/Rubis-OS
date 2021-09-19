@@ -1,10 +1,11 @@
-global _start
+section .text
 
 [bits 32]
 [extern loader_main]
 
-;%include "kernel/cpu/idt.asm"
+call loader_main
+jmp $
 
-_start:
-    call loader_main
-    jmp $
+%include "kernel/cpu/interrupt.asm"
+
+section .rodata

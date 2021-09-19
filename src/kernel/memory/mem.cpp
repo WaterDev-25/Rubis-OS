@@ -6,7 +6,7 @@ void* memset(void* dest, unsigned char val, int count){
     return dest;
 }
 
-void memcp(unsigned char* source, unsigned char* dest, int count){
+void memcpy(unsigned char* source, unsigned char* dest, int count){
     for(int i = 0; i < count; i++)
         *(dest + i) = *(source + i);
 }
