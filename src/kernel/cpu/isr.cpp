@@ -104,8 +104,8 @@ const char* exception_messages[] =  {
 
 extern "C" void _fault_handler(struct regs *r){
     if(r->int_no < 32){
-        print(exception_messages[r->int_no]);
-        print(" Exception. System Halted!\n\r");
+        printstr(exception_messages[r->int_no]);
+        printstr(" Exception. System Halted!\n\r");
         for (;;);
     }
 }

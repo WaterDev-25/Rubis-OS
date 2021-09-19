@@ -7,9 +7,9 @@ void keyboard_handler(struct regs *r){
     {
         default:
             if(scancode < 0x3A)
-                print("\r\nKey was pressed!");
+                printstr("\r\nKey was pressed!");
             else
-                print("\r\nKey was released!");
+                printstr("\r\nKey was released!");
     }
 
     outb(0x20, 0x20);
