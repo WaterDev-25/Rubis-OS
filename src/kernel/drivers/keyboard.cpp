@@ -6,7 +6,7 @@ void keyboard_handler(struct regs *r){
     switch (scancode)
     {
         default:
-            if(scancode < 0x3A) 
+            if(scancode < 0x3A)
                 print("\r\nKey was pressed!");
             else
                 print("\r\nKey was released!");
