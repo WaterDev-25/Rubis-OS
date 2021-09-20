@@ -16,7 +16,7 @@ extern "C" void loader_main(){
     keyboard_install();
 
     SetCursorPosition(PositionFromCoords(0, 0));
-    printstr("WaterOS x86");
+    printstr("RubisOS x86");
 
     return;
 }
