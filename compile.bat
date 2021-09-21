@@ -42,6 +42,3 @@ cd ..
 
 :: Run bochs
 start bochsrc.bxrc
-
-
-@echo off
