@@ -1,5 +1,5 @@
-#include "../memory/mem.cpp"
-#include "../utils/typedefs.cpp"
+#include "../memory/mem.h"
+#include "../utils/typedefs.h"
 
 struct regs {
     unsigned int gs, fs, es, ds;

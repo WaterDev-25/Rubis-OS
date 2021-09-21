@@ -1,3 +1,7 @@
+#include "idt.h"
+#include "../utils/typedefs.h"
+#include "../drivers/text_print.h"
+
 extern "C" void _isr0();
 extern "C" void _isr1();
 extern "C" void _isr2();

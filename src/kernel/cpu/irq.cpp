@@ -1,3 +1,8 @@
+#include "../drivers/port_io.h"
+#include "../utils/typedefs.h"
+#include "../drivers/text_print.h"
+#include "idt.h"
+
 extern "C" void irq0();
 extern "C" void irq1();
 extern "C" void irq2();

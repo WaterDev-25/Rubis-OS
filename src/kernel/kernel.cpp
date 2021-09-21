@@ -1,9 +1,10 @@
-#include "drivers/text_print.cpp"
-#include "cpu/idt.cpp"
-#include "cpu/isr.cpp"
-#include "cpu/irq.cpp"
-#include "cpu/timer.cpp"
-#include "drivers/keyboard.cpp"
+#include "utils/typedefs.h"
+#include "drivers/text_print.h"
+#include "cpu/idt.h"
+#include "cpu/isr.h"
+#include "cpu/irq.h"
+#include "cpu/timer.h"
+#include "drivers/keyboard.h"
 
 extern "C" void loader_main(){
     idt_install();
@@ -16,7 +17,7 @@ extern "C" void loader_main(){
     keyboard_install();
 
     SetCursorPosition(PositionFromCoords(0, 0));
-    printstr("RubisOS x86");
+    printstr("RubisOS x86\n\r\n\r");
 
     return;
 }

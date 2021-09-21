@@ -1,6 +1,6 @@
-#pragma once
-#include "port_io.cpp"
-#include "../utils/typedefs.cpp"
+#include "port_io.h"
+#include "../utils/typedefs.h"
+#include "../maths/vec2.h"
 #define VGA_MEMORY (uint8_t*)0xb8000
 #define VGA_WIDTH 80
 
@@ -44,3 +44,17 @@ void printchr(char chr){
 
     SetCursorPosition(CursorPosition + 1);
 }
+
+/*
+// ADD .h BIG PRBL
+uint16_t get_cursor_position(void) {
+    uint16_t pos = 0;
+    outb(0x3D4, 0x0F);
+    pos |= inb(0x3D5);
+    outb(0x3D4, 0x0E);
+    pos |= ((uint16_t)inb(0x3D5)) << 8;
+    //return x = pos / VGA_WIDTH, y = pos % VGA_WIDTH; // IT'S JUST MEMO :)
+    //return Vector2(pos / VGA_WIDTH, pos % VGA_WIDTH);
+    return pos;
+}
+*/

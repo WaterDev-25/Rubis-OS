@@ -6,6 +6,16 @@ INPUT
 (
     kernel_entry.o
     kernel.o
+    idt.o
+    irq.o
+    isr.o
+    timer.o
+    keyboard.o
+    port_io.o
+    text_print.o
+    vec2.o
+    mem.o
+    typedefs.o
 )
 
 OUTPUT
