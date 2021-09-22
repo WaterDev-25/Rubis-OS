@@ -30,6 +30,9 @@ wsl $WSLENV/x86_64-elf-gcc -ffreestanding -mno-red-zone -m32 -c kernel/memory/me
 :: Compile utils/
 wsl $WSLENV/x86_64-elf-gcc -ffreestanding -mno-red-zone -m32 -c kernel/utils/typedefs.cpp -o ../build/typedefs.o -I utils
 
+:: Compile terminals/
+wsl $WSLENV/x86_64-elf-gcc -ffreestanding -mno-red-zone -m32 -c kernel/terminals/shell.cpp -o ../build/shell.o -I terminals
+
 cd ../build
 ::wsl $WSLENV/x86_64-elf-ld -o loader.bin -m elf_i386 -Ttext 0x8000 kernel_entry.o kernel.o --oformat binary
 wsl $WSLENV/x86_64-elf-ld -m elf_i386 -T "../link.ld"

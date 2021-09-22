@@ -1,5 +1,5 @@
-#include "../drivers/port_io.h"
 #include "../utils/typedefs.h"
+#include "../drivers/port_io.h"
 #include "../drivers/text_print.h"
 #include "idt.h"
 

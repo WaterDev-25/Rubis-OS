@@ -1,5 +1,6 @@
 #include "../memory/mem.h"
 #include "../utils/typedefs.h"
+#include "../drivers/text_print.h"
 
 struct idt_entry{
     unsigned short base_lo;

@@ -2,6 +2,8 @@
 #include "../utils/typedefs.h"
 #include "port_io.h"
 #include "text_print.h"
+#include "../maths/vec2.h"
+#include "../terminals/shell.h"
 
 const char sclt[] = {
     0, 0, '1', '2',
@@ -25,14 +27,16 @@ void keyboard_handler(struct regs *r){
     unsigned char scancode;
 
     scancode = inb(0x60);
-    
+
     if (scancode & 0x80){ } else {
         switch(scancode) {
             case 0x0E:
-                //SetCursorPosition(get_cursor_position()); // NOT GOOD
-
-            default:
-                printchr(sclt[scancode]);
+                backspace(); // test func
+                break;
+            case 0x1c:
+                set_grh();
+                break;
+            default: printchr(sclt[scancode]);
                 /*if(scancode < 0x3A)
                     printstr("\r\nKey was pressed!");
                 else

@@ -1,6 +1,8 @@
 #include "port_io.h"
 #include "../utils/typedefs.h"
+#include "../utils/color_codes.h"
 #include "../maths/vec2.h"
+#include "../memory/mem.h"
 #define VGA_MEMORY (uint8_t*)0xb8000
 #define VGA_WIDTH 80
 
@@ -19,7 +21,7 @@ uint16_t PositionFromCoords(uint8_t x, uint8_t y){
     return y * VGA_WIDTH + x;
 }
 
-void printstr(const char* str){
+void printstr(const char* str, uint8_t color = BACKGROUND_BLACK | FOREGROUND_WHITE){
     uint8_t* charPtr = (uint8_t*)str;
     uint16_t index = CursorPosition;
     while(*charPtr != 0){
@@ -32,6 +34,7 @@ void printstr(const char* str){
                 break;
             default:
                 *(VGA_MEMORY + index * 2) = *charPtr;
+                *(VGA_MEMORY + index * 2 + 1) = color;
                 index++;
         }
         charPtr++;
@@ -39,22 +42,30 @@ void printstr(const char* str){
     SetCursorPosition(index);
 }
 
-void printchr(char chr){
+void printchr(char chr, uint8_t color = BACKGROUND_BLACK | FOREGROUND_WHITE){
     *(VGA_MEMORY + CursorPosition * 2) = chr;
+    *(VGA_MEMORY + CursorPosition * 2 + 1) = color;
 
     SetCursorPosition(CursorPosition + 1);
 }
 
+void backspace(){ // test func
+    SetCursorPosition(CursorPosition - 1);
+    printchr(' ');
+    SetCursorPosition(CursorPosition - 1);
+}
+
 /*
-// ADD .h BIG PRBL
-uint16_t get_cursor_position(void) {
+// test func
+uint16_t cursor_pos(){
     uint16_t pos = 0;
     outb(0x3D4, 0x0F);
     pos |= inb(0x3D5);
     outb(0x3D4, 0x0E);
     pos |= ((uint16_t)inb(0x3D5)) << 8;
-    //return x = pos / VGA_WIDTH, y = pos % VGA_WIDTH; // IT'S JUST MEMO :)
-    //return Vector2(pos / VGA_WIDTH, pos % VGA_WIDTH);
-    return pos;
+    //pos += i;
+    uint8_t x = pos % VGA_WIDTH;
+    uint8_t y = pos / VGA_WIDTH;
+    return x,y;
 }
 */

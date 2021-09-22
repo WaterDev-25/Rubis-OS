@@ -15,6 +15,7 @@ INPUT
     text_print.o
     vec2.o
     mem.o
+    shell.o
     typedefs.o
 )
 

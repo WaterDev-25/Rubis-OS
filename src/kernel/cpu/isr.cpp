@@ -1,5 +1,5 @@
-#include "idt.h"
 #include "../utils/typedefs.h"
+#include "idt.h"
 #include "../drivers/text_print.h"
 
 extern "C" void _isr0();
