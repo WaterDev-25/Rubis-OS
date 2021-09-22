@@ -23,6 +23,8 @@ const char sclt[] = {
     0, ' '
 };
 
+char userinput[255];
+
 void keyboard_handler(struct regs *r){
     unsigned char scancode;
 
@@ -32,11 +34,27 @@ void keyboard_handler(struct regs *r){
         switch(scancode) {
             case 0x0E:
                 backspace(); // test func
+                // DELETE IN USERINPUT WHEN PRESS 0x0E
                 break;
             case 0x1c:
+                check_command(userinput);
+                for(int i = 0; i < 255; i++){
+                    if(userinput[i] != 0){
+                        userinput[i] = 0;
+                    }
+                }
                 set_grh();
                 break;
-            default: printchr(sclt[scancode]);
+            default:
+                    for(int i = 0; i < 255; i++){
+                        if(userinput[i] == 0){
+                            userinput[i] = sclt[scancode];
+                            printchr(sclt[scancode]);
+                            break;
+                        }
+                    }
+                    //userinput += sclt[scancode];
+                    //printchr(sclt[scancode]);
                 /*if(scancode < 0x3A)
                     printstr("\r\nKey was pressed!");
                 else
@@ -50,4 +68,8 @@ void keyboard_handler(struct regs *r){
 
 void keyboard_install(){
     irq_install_handler(1, keyboard_handler);
+
+    for(int i = 0; i < 255; i++){
+        userinput[i] = 0;
+    }
 }

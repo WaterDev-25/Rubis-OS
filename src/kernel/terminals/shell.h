@@ -1,5 +1,6 @@
 #ifndef SHELL_H
 #define SHELL_H
-void load_shell();
 void set_grh();
+void check_command(char* userinput);
+void load_shell();
 #endif
