@@ -55,22 +55,6 @@ void backspace(){ // test func
     SetCursorPosition(CursorPosition - 1);
 }
 
-// LOCATION OF THIS FUNCTION IS TEMP
-bool StringStartsWith(const char* s, const char* t){
-    const char* g = t;
-	
-	bool res = true;
-	int i = 0;
-	do{
-		if(s[i] != t[i] || i > 80){
-			res = false;
-			break;
-		}
-		else i++;
-	}while(g[i] != 0);
-	return res;
-}
-
 /*
 // test func
 uint16_t cursor_pos(){

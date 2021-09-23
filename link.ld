@@ -14,6 +14,8 @@ INPUT
     port_io.o
     text_print.o
     vec2.o
+    maths.o
+    string.o
     mem.o
     shell.o
     typedefs.o

@@ -1,5 +1,6 @@
 #include "../utils/typedefs.h"
 #include "../drivers/text_print.h"
+#include "../utils/string.h"
 
 void set_grh(){
     printstr("\n\rShell> ", BACKGROUND_BLACK | FOREGROUND_LIGHTRED);
@@ -8,7 +9,7 @@ void set_grh(){
 char testCmd[5] = "test";
 char helpCmd[5] = "help";
 
-// VERY GLITCHED LOL
+//VERY GLITCHED LOL
 void check_command(char userinput[128]){
     if(StringStartsWith(userinput, testCmd)) {
         printstr("\n\r");

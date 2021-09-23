@@ -27,6 +27,9 @@ init_pm:
     mov fs, ax
     mov gs, ax
 
+    mov ebp, 0x90000
+    mov esp, ebp
+
     ; uncomment later
     ;mov ebp, 0x90000
     ;mov esp, ebp

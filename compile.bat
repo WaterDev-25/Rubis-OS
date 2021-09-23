@@ -23,12 +23,14 @@ wsl $WSLENV/x86_64-elf-gcc -ffreestanding -mno-red-zone -m32 -c kernel/drivers/t
 
 :: Compile maths/
 wsl $WSLENV/x86_64-elf-gcc -ffreestanding -mno-red-zone -m32 -c kernel/maths/vec2.cpp -o ../build/vec2.o -I maths
+wsl $WSLENV/x86_64-elf-gcc -ffreestanding -mno-red-zone -m32 -c kernel/maths/maths.cpp -o ../build/maths.o -I maths
 
 :: Compile memory/
 wsl $WSLENV/x86_64-elf-gcc -ffreestanding -mno-red-zone -m32 -c kernel/memory/mem.cpp -o ../build/mem.o -I mem
 
 :: Compile utils/
 wsl $WSLENV/x86_64-elf-gcc -ffreestanding -mno-red-zone -m32 -c kernel/utils/typedefs.cpp -o ../build/typedefs.o -I utils
+wsl $WSLENV/x86_64-elf-gcc -ffreestanding -mno-red-zone -m32 -c kernel/utils/string.cpp -o ../build/string.o -I utils
 
 :: Compile terminals/
 wsl $WSLENV/x86_64-elf-gcc -ffreestanding -mno-red-zone -m32 -c kernel/terminals/shell.cpp -o ../build/shell.o -I terminals
