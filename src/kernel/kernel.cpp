@@ -6,6 +6,7 @@
 #include "cpu/timer.h"
 #include "drivers/keyboard.h"
 #include "terminals/shell.h"
+#include "drivers/port_io.h"
 
 extern "C" void loader_main(){
     idt_install();
@@ -18,7 +19,7 @@ extern "C" void loader_main(){
     keyboard_install();
 
     SetCursorPosition(PositionFromCoords(0, 0));
-    printstr("RubisOS has booted.\n\r", BACKGROUND_BLACK | FOREGROUND_YELLOW);
+    printstr("RubisOS has booted.\n\r", BACKGROUND_BLACK | FOREGROUND_LIGHTGRAY);
     load_shell();
     return;
 }

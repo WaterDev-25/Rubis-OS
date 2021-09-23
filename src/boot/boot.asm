@@ -36,8 +36,8 @@ after_disk_read:
 %include "boot/pm/switch_pm.asm"
 
 BOOT_DISK: db 0
-LOADING_BOOT_MSG: db "Loading boot", 10, 13, 0
-EXECUTING_BOOT_MSG: db "Executing boot", 10, 13, 0
+;LOADING_BOOT_MSG: db "Loading boot", 10, 13, 0
+;EXECUTING_BOOT_MSG: db "Executing boot", 10, 13, 0
 DISK_READ_ERROR_MSG: db "Disk error", 10, 13, 0
 
 begin_pm:
