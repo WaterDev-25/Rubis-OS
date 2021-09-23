@@ -7,7 +7,7 @@
 #include "drivers/keyboard.h"
 #include "terminals/shell.h"
 #include "drivers/port_io.h"
-#include "maths/maths.h"
+#include "maths/math.h"
 #include "utils/string.h"
 
 extern "C" void loader_main(){
@@ -22,7 +22,7 @@ extern "C" void loader_main(){
 
     SetCursorPosition(PositionFromCoords(0, 0));
     printstr("RubisOS has booted.\n\r", BACKGROUND_BLACK | FOREGROUND_LIGHTGRAY);
-    
+
     load_shell();
     return;
 }

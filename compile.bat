@@ -23,7 +23,7 @@ wsl $WSLENV/x86_64-elf-gcc -ffreestanding -mno-red-zone -m32 -c kernel/drivers/t
 
 :: Compile maths/
 wsl $WSLENV/x86_64-elf-gcc -ffreestanding -mno-red-zone -m32 -c kernel/maths/vec2.cpp -o ../build/vec2.o -I maths
-wsl $WSLENV/x86_64-elf-gcc -ffreestanding -mno-red-zone -m32 -c kernel/maths/maths.cpp -o ../build/maths.o -I maths
+wsl $WSLENV/x86_64-elf-gcc -ffreestanding -mno-red-zone -m32 -c kernel/maths/math.cpp -o ../build/math.o -I maths
 
 :: Compile memory/
 wsl $WSLENV/x86_64-elf-gcc -ffreestanding -mno-red-zone -m32 -c kernel/memory/mem.cpp -o ../build/mem.o -I mem
