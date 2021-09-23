@@ -49,7 +49,7 @@ void keyboard_handler(struct regs *r){
                     for(int i = 0; i < 255; i++){
                         if(userinput[i] == 0){
                             userinput[i] = sclt[scancode];
-                            printchr(sclt[scancode]);
+                            printchr(userinput[i]);
                             break;
                         }
                     }
