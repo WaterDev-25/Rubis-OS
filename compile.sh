@@ -45,4 +45,4 @@ cat bootloader.bin empty_end.bin > os.bin
 cd ..
 
 # Run bochs
-#start bochsrc.bxrc # change
+bochs -f bochsrc.bxrc
