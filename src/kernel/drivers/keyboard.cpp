@@ -4,6 +4,7 @@
 #include "text_print.h"
 #include "../maths/vec2.h"
 #include "../terminals/shell.h"
+#include "../utils/string.h"
 
 const char sclt[] = {
     0, 0, '1', '2',
@@ -24,6 +25,7 @@ const char sclt[] = {
 };
 
 char userinput[255];
+char lastkey;
 
 void keyboard_handler(struct regs *r){
     unsigned char scancode;
@@ -33,32 +35,27 @@ void keyboard_handler(struct regs *r){
     if (scancode & 0x80){ } else {
         switch(scancode) {
             case 0x0E:
-                backspace(); // test func
-                // DELETE IN USERINPUT WHEN PRESS 0x0E
+                backspace(1);
+                userinput[strlen(userinput)-1] = '\0';
                 break;
             case 0x1c:
                 check_command(userinput);
                 for(int i = 0; i < 255; i++){
-                    if(userinput[i] != 0){
-                        userinput[i] = 0;
+                    if(userinput[i] != '\0'){
+                        userinput[i] = '\0';
                     }
                 }
                 set_grh();
                 break;
             default:
-                    for(int i = 0; i < 255; i++){
-                        if(userinput[i] == 0){
-                            userinput[i] = sclt[scancode];
-                            printchr(userinput[i]);
-                            break;
-                        }
+                for(int i = 0; i < 255; i++){
+                    if(userinput[i] == '\0'){
+                        userinput[i] = sclt[scancode];
+                        lastkey = sclt[scancode];
+                        printchr(userinput[i]);
+                        break;
                     }
-                    //userinput += sclt[scancode];
-                    //printchr(sclt[scancode]);
-                /*if(scancode < 0x3A)
-                    printstr("\r\nKey was pressed!");
-                else
-                    printstr("\r\nKey was released!");*/
+                }
         }
     }
 

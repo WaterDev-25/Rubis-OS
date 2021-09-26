@@ -1,17 +1,4 @@
-bool StringStartsWith(const char* s, const char* t){ //temp function
-    const char* g = t;
-	
-	bool res = true;
-	int i = 0;
-	do{
-		if(s[i] != t[i] || i > 80){
-			res = false;
-			break;
-		}
-		else i++;
-	}while(g[i] != 0);
-	return res;
-}
+#include "../utils/typedefs.h"
 
 char* itoa(int res){
     int size = 0;
@@ -33,4 +20,21 @@ char* itoa(int res){
     }
 
     return ret;
+}
+
+/*
+char* dtoa(double res){
+
+}
+*/
+
+int strlen(const char* s){
+    int res;
+    for(res = 0; s[res] != 0; res++);
+    return res;
+}
+
+int strcmp(const char *s1, const char *s2){
+    while ((*s1 == *s2) && *s1) { ++s1; ++s2; }
+    return ((int) (unsigned char) *s1) - ((int) (unsigned char) *s2);
 }

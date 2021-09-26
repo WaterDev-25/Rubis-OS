@@ -49,23 +49,8 @@ void printchr(char chr, uint8_t color = BACKGROUND_BLACK | FOREGROUND_WHITE){
     SetCursorPosition(CursorPosition + 1);
 }
 
-void backspace(){ // test func
-    SetCursorPosition(CursorPosition - 1);
+void backspace(int n){
+    SetCursorPosition(CursorPosition - n);
     printchr(' ');
-    SetCursorPosition(CursorPosition - 1);
+    SetCursorPosition(CursorPosition - n);
 }
-
-/*
-// test func
-uint16_t cursor_pos(){
-    uint16_t pos = 0;
-    outb(0x3D4, 0x0F);
-    pos |= inb(0x3D5);
-    outb(0x3D4, 0x0E);
-    pos |= ((uint16_t)inb(0x3D5)) << 8;
-    //pos += i;
-    uint8_t x = pos % VGA_WIDTH;
-    uint8_t y = pos / VGA_WIDTH;
-    return x,y;
-}
-*/

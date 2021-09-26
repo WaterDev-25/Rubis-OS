@@ -9,21 +9,24 @@ void set_grh(){
 char testCmd[5] = "test";
 char helpCmd[5] = "help";
 
-//VERY GLITCHED LOL
+//the code is horrible lol
 void check_command(char userinput[128]){
-    if(StringStartsWith(userinput, testCmd)) {
+    if(strcmp(userinput, testCmd) == 0) {
         printstr("\n\r");
         printstr(userinput);
         printstr("\n\r");
-    } else if(StringStartsWith(userinput, helpCmd)){
+        return;
+    } else if(strcmp(userinput, helpCmd) == 0){
         printstr("\n\r");
-        printstr("It's help command x).");
+        printstr("help command");
         printstr("\n\r");
+        return;
     } else {
         printstr("\n\r");
         printstr(userinput);
         printstr(": command not found");
         printstr("\n\r");
+        return;
     }
 }
 

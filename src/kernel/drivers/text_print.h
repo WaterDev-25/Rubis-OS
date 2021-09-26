@@ -5,6 +5,5 @@ void SetCursorPosition(uint16_t position);
 uint16_t PositionFromCoords(uint8_t x, uint8_t y);
 void printstr(const char* str, uint8_t color = BACKGROUND_BLACK | FOREGROUND_WHITE);
 void printchr(char chr, uint8_t color = BACKGROUND_BLACK | FOREGROUND_WHITE);
-void backspace(); // test func
-//uint16_t cursor_pos();
+void backspace(int n);
 #endif

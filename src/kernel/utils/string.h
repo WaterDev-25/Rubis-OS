@@ -1,5 +1,7 @@
 #ifndef STRING_H
 #define STRING_H
-bool StringStartsWith(const char* s, const char* t); //temp function
 char* itoa(int res);
+//char* dtoa(double res);
+int strlen(const char* s);
+int strcmp(const char *s1, const char *s2);
 #endif
