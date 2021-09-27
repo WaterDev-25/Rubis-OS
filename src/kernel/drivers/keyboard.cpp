@@ -25,7 +25,6 @@ const char sclt[] = {
 };
 
 char userinput[255];
-char lastkey;
 
 void keyboard_handler(struct regs *r){
     unsigned char scancode;
@@ -51,7 +50,6 @@ void keyboard_handler(struct regs *r){
                 for(int i = 0; i < 255; i++){
                     if(userinput[i] == '\0'){
                         userinput[i] = sclt[scancode];
-                        lastkey = sclt[scancode];
                         printchr(userinput[i]);
                         break;
                     }
