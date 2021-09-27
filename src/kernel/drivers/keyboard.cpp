@@ -63,8 +63,9 @@ void keyboard_handler(struct regs *r){
 
 void keyboard_install(){
     irq_install_handler(1, keyboard_handler);
-
+    
+    /*
     for(int i = 0; i < 255; i++){
-        userinput[i] = 0;
-    }
+        userinput[i] = '\0';
+    }*/
 }
