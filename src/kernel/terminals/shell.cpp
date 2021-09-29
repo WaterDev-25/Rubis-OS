@@ -14,7 +14,7 @@ char helpCmd[5] = "help";
 void check_command(char userinput[128]){
     if(strcmp(userinput, testCmd) == 0) {
         printstr("\n\r");
-        printstr("test");
+        printstr(userinput);
         printstr("\n\r");
         return;
     } else if(strcmp(userinput, helpCmd) == 0){
