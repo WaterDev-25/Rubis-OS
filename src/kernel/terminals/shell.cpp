@@ -1,6 +1,7 @@
 #include "../utils/typedefs.h"
 #include "../drivers/text_print.h"
 #include "../utils/string.h"
+#include "../drivers/port_io.h"
 
 void set_grh(){
     printstr("\n\rShell> ", BACKGROUND_BLACK | FOREGROUND_LIGHTRED);
@@ -13,7 +14,7 @@ char helpCmd[5] = "help";
 void check_command(char userinput[128]){
     if(strcmp(userinput, testCmd) == 0) {
         printstr("\n\r");
-        printstr(userinput);
+        printstr("test");
         printstr("\n\r");
         return;
     } else if(strcmp(userinput, helpCmd) == 0){
