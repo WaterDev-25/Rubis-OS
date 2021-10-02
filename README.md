@@ -1,6 +1,6 @@
 # Rubis-OS
  ### About
- Rubis-OS is an open source x86 operating system coded in my free time. (More is to come)
+ Ruby-OS is an open source x86 operating system coded in my spare time. There isn't much he can do at the moment, but I'm doing everything to release a stable version as quickly as possible.
 
  ### Useful links
  [GitHub repo](https://github.com/WaterDev-25/Rubis-OS)  
