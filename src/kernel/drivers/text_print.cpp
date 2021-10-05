@@ -54,3 +54,7 @@ void backspace(int n){
     printchr(' ');
     SetCursorPosition(CursorPosition - n);
 }
+
+void colline(int line, int col){
+	for(int i = (int)VGA_MEMORY + VGA_WIDTH * 2 * line + 1; i < (int)VGA_MEMORY + VGA_WIDTH * 2 * (line + 1) + 1; i += 2) *((char*)i) = col;
+}

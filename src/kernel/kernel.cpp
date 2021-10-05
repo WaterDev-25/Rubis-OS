@@ -9,6 +9,7 @@
 #include "drivers/port_io.h"
 #include "maths/math.h"
 #include "utils/string.h"
+#define BAR_COLOR 0x1E
 
 extern "C" void loader_main(){
     idt_install();
@@ -20,8 +21,12 @@ extern "C" void loader_main(){
     timer_install();
     keyboard_install();
 
+    //colline(0, BACKGROUND_CYAN);
+    //colline(24, BACKGROUND_CYAN);
+
     SetCursorPosition(PositionFromCoords(0, 0));
-    printstr("RubisOS has booted.\n\r", BACKGROUND_BLACK | FOREGROUND_LIGHTGRAY);
+    printstr("WaterCorp Rubis-OS Version b0.1\n\r", BACKGROUND_BLACK | FOREGROUND_WHITE);
+    printstr("(C)Copyright Water Corp 2021-2021\n\r", BACKGROUND_BLACK | FOREGROUND_WHITE);
 
     load_shell();
     return;

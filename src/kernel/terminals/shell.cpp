@@ -3,20 +3,33 @@
 #include "../utils/string.h"
 #include "../drivers/port_io.h"
 
+#include "../terminals/commands/shutdown.h"
+#include "../terminals/commands/gmod.h"
+
 void set_grh(){
-    printstr("\n\rShell> ", BACKGROUND_BLACK | FOREGROUND_LIGHTRED);
+    printstr("\n\r>:", BACKGROUND_BLACK | FOREGROUND_LIGHTRED);
 }
 
-char testCmd[5] = "test";
-char helpCmd[5] = "help";
+char testCmd[] = "test";
+char helpCmd[] = "help";
+char shutdownCmd[] = "shutdown";
+char gmodCmd[] = "gmod";
 
-//the code is horrible lol
+//expiremental code
 void check_command(char userinput[128]){
     if(strcmp(userinput, testCmd) == 0) {
         printstr("\n\r");
         printstr(userinput);
         printstr("\n\r");
         return;
+    } else if(strcmp(userinput, shutdownCmd) == 0){
+        printstr("\n\r");
+        ShutdownCMD::exec();
+        printstr("\n\r");
+    } else if(strcmp(userinput, gmodCmd) == 0){
+        printstr("\n\r");
+        GmodCMD::exec();
+        printstr("\n\r");
     } else if(strcmp(userinput, helpCmd) == 0){
         printstr("\n\r");
         printstr("help command");

@@ -6,4 +6,5 @@ uint16_t PositionFromCoords(uint8_t x, uint8_t y);
 void printstr(const char* str, uint8_t color = BACKGROUND_BLACK | FOREGROUND_WHITE);
 void printchr(char chr, uint8_t color = BACKGROUND_BLACK | FOREGROUND_WHITE);
 void backspace(int n);
+void colline(int line, int col);
 #endif

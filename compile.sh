@@ -34,6 +34,10 @@ x86_64-elf-gcc -ffreestanding -mno-red-zone -m32 -c kernel/utils/string.cpp -o .
 # Compile terminals/
 x86_64-elf-gcc -ffreestanding -mno-red-zone -m32 -c kernel/terminals/shell.cpp -o ../build/shell.o -I terminals
 
+# Compile terminals/commands/
+x86_64-elf-gcc -ffreestanding -mno-red-zone -m32 -c kernel/terminals/commands/shutdown.cpp -o ../build/shutdown.o -I commands
+x86_64-elf-gcc -ffreestanding -mno-red-zone -m32 -c kernel/terminals/commands/gmod.cpp -o ../build/gmod.o -I commands
+
 cd ../build
 #x86_64-elf-ld -o loader.bin -m elf_i386 -Ttext 0x8000 kernel_entry.o kernel.o --oformat binary
 x86_64-elf-ld -m elf_i386 -T "../link.ld"

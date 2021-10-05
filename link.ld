@@ -19,6 +19,8 @@ INPUT
     mem.o
     shell.o
     typedefs.o
+    shutdown.o
+    gmod.o
 )
 
 OUTPUT
