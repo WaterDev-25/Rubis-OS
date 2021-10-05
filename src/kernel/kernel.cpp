@@ -9,7 +9,6 @@
 #include "drivers/port_io.h"
 #include "maths/math.h"
 #include "utils/string.h"
-#define BAR_COLOR 0x1E
 
 extern "C" void loader_main(){
     idt_install();
