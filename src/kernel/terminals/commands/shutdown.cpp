@@ -1,5 +1,5 @@
 #include "../../utils/typedefs.h"
-#include "../../drivers/text_print.h"
+#include "../../drivers/vga.h"
 #include "../../terminals/commands/shutdown.h"
 
 const char* ShutdownCMD::info::desc = "Shutdown command";

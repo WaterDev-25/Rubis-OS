@@ -1,6 +1,6 @@
 #include "../utils/typedefs.h"
 #include "../drivers/port_io.h"
-#include "../drivers/text_print.h"
+#include "../drivers/vga.h"
 #include "idt.h"
 
 extern "C" void irq0();

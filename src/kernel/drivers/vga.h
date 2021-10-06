@@ -7,4 +7,7 @@ void printstr(const char* str, uint8_t color = BACKGROUND_BLACK | FOREGROUND_WHI
 void printchr(char chr, uint8_t color = BACKGROUND_BLACK | FOREGROUND_WHITE);
 void backspace(int n);
 void colline(int line, int col);
+void disable_cursor();
+void enable_cursor(uint8_t cursor_start, uint8_t cursor_end);
+void clear(int col); //expiremental
 #endif

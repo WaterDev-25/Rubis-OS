@@ -1,6 +1,6 @@
 #include "../utils/typedefs.h"
 #include "idt.h"
-#include "../drivers/text_print.h"
+#include "../drivers/vga.h"
 
 extern "C" void _isr0();
 extern "C" void _isr1();

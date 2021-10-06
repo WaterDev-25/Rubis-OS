@@ -12,7 +12,7 @@ INPUT
     timer.o
     keyboard.o
     port_io.o
-    text_print.o
+    vga.o
     vec2.o
     math.o
     string.o

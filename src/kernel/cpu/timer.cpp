@@ -1,6 +1,6 @@
 #include "../drivers/port_io.h"
 #include "../utils/typedefs.h"
-#include "../drivers/text_print.h"
+#include "../drivers/vga.h"
 #include "irq.h"
 
 int timer_ticks = 0;

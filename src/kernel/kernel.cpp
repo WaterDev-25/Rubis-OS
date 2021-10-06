@@ -1,5 +1,5 @@
 #include "utils/typedefs.h"
-#include "drivers/text_print.h"
+#include "drivers/vga.h"
 #include "cpu/idt.h"
 #include "cpu/isr.h"
 #include "cpu/irq.h"
@@ -10,6 +10,16 @@
 #include "maths/math.h"
 #include "utils/string.h"
 
+/*
+mod list:
+    [
+        0: Shell
+        1: Graphic mode
+    ]
+*/
+
+int mode = 0;
+
 extern "C" void loader_main(){
     idt_install();
     isrs_install();
@@ -19,9 +29,6 @@ extern "C" void loader_main(){
     
     timer_install();
     keyboard_install();
-
-    //colline(0, BACKGROUND_CYAN);
-    //colline(24, BACKGROUND_CYAN);
 
     SetCursorPosition(PositionFromCoords(0, 0));
     printstr("WaterCorp Rubis-OS Version b0.1\n\r", BACKGROUND_BLACK | FOREGROUND_WHITE);

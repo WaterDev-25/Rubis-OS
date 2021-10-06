@@ -1,7 +1,7 @@
 #include "../cpu/irq.h"
 #include "../utils/typedefs.h"
 #include "port_io.h"
-#include "text_print.h"
+#include "vga.h"
 #include "../maths/vec2.h"
 #include "../terminals/shell.h"
 #include "../utils/string.h"
@@ -24,6 +24,7 @@ const char sclt[] = {
     0, ' '
 };
 
+extern int mode;
 char userinput[255];
 
 void keyboard_handler(struct regs *r){
@@ -34,24 +35,30 @@ void keyboard_handler(struct regs *r){
     if (scancode & 0x80){ } else {
         switch(scancode) {
             case 0x0E:
-                backspace(1);
-                userinput[strlen(userinput)-1] = '\0';
-                break;
-            case 0x1c:
-                check_command(userinput);
-                for(int i = 0; i < 255; i++){
-                    if(userinput[i] != '\0'){
-                        userinput[i] = '\0';
-                    }
+                if(mode == 0){
+                    backspace(1);
+                    userinput[strlen(userinput)-1] = '\0';
+                    break;
                 }
-                set_grh();
-                break;
+            case 0x1c:
+                if(mode == 0){
+                    check_command(userinput);
+                    for(int i = 0; i < 255; i++){
+                        if(userinput[i] != '\0'){
+                            userinput[i] = '\0';
+                        }
+                    }
+                    set_grh();
+                    break;
+                }
             default:
-                for(int i = 0; i < 255; i++){
-                    if(userinput[i] == '\0'){
-                        userinput[i] = sclt[scancode];
-                        printchr(userinput[i]);
-                        break;
+                if(mode == 0){
+                    for(int i = 0; i < 255; i++){
+                        if(userinput[i] == '\0'){
+                            userinput[i] = sclt[scancode];
+                            printchr(userinput[i]);
+                            break;
+                        }
                     }
                 }
         }

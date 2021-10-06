@@ -18,7 +18,7 @@ x86_64-elf-gcc -ffreestanding -mno-red-zone -m32 -c kernel/cpu/timer.cpp -o ../b
 # Compile drivers/
 x86_64-elf-gcc -ffreestanding -mno-red-zone -m32 -c kernel/drivers/keyboard.cpp -o ../build/keyboard.o -I drivers
 x86_64-elf-gcc -ffreestanding -mno-red-zone -m32 -c kernel/drivers/port_io.cpp -o ../build/port_io.o -I drivers
-x86_64-elf-gcc -ffreestanding -mno-red-zone -m32 -c kernel/drivers/text_print.cpp -o ../build/text_print.o -I drivers
+x86_64-elf-gcc -ffreestanding -mno-red-zone -m32 -c kernel/drivers/vga.cpp -o ../build/vga.o -I drivers
 
 # Compile maths/
 x86_64-elf-gcc -ffreestanding -mno-red-zone -m32 -c kernel/maths/vec2.cpp -o ../build/vec2.o -I maths
