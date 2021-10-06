@@ -1,4 +1,4 @@
-class GmodCMD{
+class HelpCMD{
     public:
         static void exec();
 

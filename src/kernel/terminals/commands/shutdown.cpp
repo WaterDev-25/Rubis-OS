@@ -2,6 +2,7 @@
 #include "../../drivers/vga.h"
 #include "../../terminals/commands/shutdown.h"
 
+const char* ShutdownCMD::info::name = "SHUTDOWN";
 const char* ShutdownCMD::info::desc = "Shutdown command";
 
 void ShutdownCMD::exec(){

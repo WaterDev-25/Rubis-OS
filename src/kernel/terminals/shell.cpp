@@ -5,6 +5,7 @@
 
 #include "../terminals/commands/shutdown.h"
 #include "../terminals/commands/gmod.h"
+#include "../terminals/commands/help.h"
 
 extern int mode;
 
@@ -36,7 +37,7 @@ void check_command(char userinput[128]){
             printstr("\n\r");
         } else if(strcmp(userinput, helpCmd) == 0){
             printstr("\n\r");
-            printstr("help command");
+            HelpCMD::exec();
             printstr("\n\r");
             return;
         } else {

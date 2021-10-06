@@ -21,6 +21,7 @@ INPUT
     typedefs.o
     shutdown.o
     gmod.o
+    help.o
 )
 
 OUTPUT

@@ -22,6 +22,11 @@ char* itoa(int res){
     return ret;
 }
 
+const char* btoa(bool res){
+    const char* vOut = res ? "true": "false";
+    return vOut;
+}
+
 /*
 char* dtoa(double res){
 
