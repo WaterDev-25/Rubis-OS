@@ -6,6 +6,7 @@
 #include "../terminals/shell.h"
 #include "../utils/string.h"
 
+//check problem on real hardware the 'm' make ';'
 const char sclt[] = {
     0, 0, '1', '2',
     '3', '4', '5', '6',
