@@ -23,6 +23,7 @@ INPUT
     shutdown.o
     gmod.o
     help.o
+    reboot.o
 )
 
 OUTPUT

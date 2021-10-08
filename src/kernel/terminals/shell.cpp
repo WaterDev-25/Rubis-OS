@@ -18,6 +18,7 @@ char testCmd[] = "test";
 char helpCmd[] = "help";
 char shutdownCmd[] = "shutdown";
 char gmodCmd[] = "gmod";
+char rebootCmd[] = "reboot";
 
 //expiremental code
 void check_command(char userinput[128]){
@@ -28,6 +29,10 @@ void check_command(char userinput[128]){
             printstr("\n\r");
             return;
         } else if(!strcmp(userinput, shutdownCmd)){
+            printstr("\n\r");
+            ShutdownCMD::exec();
+            printstr("\n\r");
+        } else if(!strcmp(userinput, rebootCmd)){
             printstr("\n\r");
             ShutdownCMD::exec();
             printstr("\n\r");

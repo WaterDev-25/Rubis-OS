@@ -41,6 +41,7 @@ x86_64-elf-gcc -ffreestanding -mno-red-zone -m32 -c kernel/terminals/shell.cpp -
 x86_64-elf-gcc -ffreestanding -mno-red-zone -m32 -c kernel/terminals/commands/shutdown.cpp -o ../build/shutdown.o -I commands
 x86_64-elf-gcc -ffreestanding -mno-red-zone -m32 -c kernel/terminals/commands/gmod.cpp -o ../build/gmod.o -I commands
 x86_64-elf-gcc -ffreestanding -mno-red-zone -m32 -c kernel/terminals/commands/help.cpp -o ../build/help.o -I commands
+x86_64-elf-gcc -ffreestanding -mno-red-zone -m32 -c kernel/terminals/commands/reboot.cpp -o ../build/reboot.o -I commands
 
 cd ../build
 #x86_64-elf-ld -o loader.bin -m elf_i386 -Ttext 0x8000 kernel_entry.o kernel.o --oformat binary
