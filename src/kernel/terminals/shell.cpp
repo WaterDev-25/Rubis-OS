@@ -22,20 +22,20 @@ char gmodCmd[] = "gmod";
 //expiremental code
 void check_command(char userinput[128]){
     if(mode == 0){
-        if(strcmp(userinput, testCmd) == 0) {
+        if(!strcmp(userinput, testCmd)){ //if(strcmp(userinput, testCmd) == 0)
             printstr("\n\r");
             printstr(userinput);
             printstr("\n\r");
             return;
-        } else if(strcmp(userinput, shutdownCmd) == 0){
+        } else if(!strcmp(userinput, shutdownCmd)){
             printstr("\n\r");
             ShutdownCMD::exec();
             printstr("\n\r");
-        } else if(strcmp(userinput, gmodCmd) == 0){
+        } else if(!strcmp(userinput, gmodCmd)){
             printstr("\n\r");
             GmodCMD::exec();
             printstr("\n\r");
-        } else if(strcmp(userinput, helpCmd) == 0){
+        } else if(!strcmp(userinput, helpCmd)){
             printstr("\n\r");
             HelpCMD::exec();
             printstr("\n\r");

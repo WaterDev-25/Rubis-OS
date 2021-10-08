@@ -31,6 +31,9 @@ x86_64-elf-gcc -ffreestanding -mno-red-zone -m32 -c kernel/memory/mem.cpp -o ../
 x86_64-elf-gcc -ffreestanding -mno-red-zone -m32 -c kernel/utils/typedefs.cpp -o ../build/typedefs.o -I utils
 x86_64-elf-gcc -ffreestanding -mno-red-zone -m32 -c kernel/utils/string.cpp -o ../build/string.o -I utils
 
+# Compile kernel/
+x86_64-elf-gcc -ffreestanding -mno-red-zone -m32 -c kernel/kernel/syscall.cpp -o ../build/syscall.o -I kernel
+
 # Compile terminals/
 x86_64-elf-gcc -ffreestanding -mno-red-zone -m32 -c kernel/terminals/shell.cpp -o ../build/shell.o -I terminals
 

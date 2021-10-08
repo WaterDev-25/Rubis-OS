@@ -19,6 +19,7 @@ INPUT
     mem.o
     shell.o
     typedefs.o
+    syscall.o
     shutdown.o
     gmod.o
     help.o
