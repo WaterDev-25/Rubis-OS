@@ -9,3 +9,4 @@
  ### Future
  - VESA Video Mode
  - ATA write sector
+ - New shell with parser...
