@@ -21,9 +21,21 @@ after_disk_read:
     mov al, 0x3
     int 0x10
 
-    call switch_pm
+    ;Set video mode
+    ;mov ax, 4f02h
+    ;mov bx, 105h
+    ;int 10h
 
-    jmp $
+    ;Draw pixel
+    ;mov ax, 0c09h    ;09h = Blue
+    ;mov cx, 2 
+    ;mov dx, 3     
+    ;xor bx, bx   
+    ;int 10h
+
+    ;call switch_pm
+
+    ;jmp $
 
 ; disk includes
 %include "boot/disk/disk_read.asm"
