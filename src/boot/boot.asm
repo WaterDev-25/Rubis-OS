@@ -33,9 +33,9 @@ after_disk_read:
     ;xor bx, bx   
     ;int 10h
 
-    ;call switch_pm
+    call switch_pm
 
-    ;jmp $
+    jmp $
 
 ; disk includes
 %include "boot/disk/disk_read.asm"
