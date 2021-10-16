@@ -10,3 +10,4 @@
  - VESA Video Mode
  - ATA write sector
  - New shell with parser...
+ - Switch to graphic mode
