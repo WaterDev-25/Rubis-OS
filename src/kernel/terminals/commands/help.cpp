@@ -7,7 +7,7 @@
 #include "../../terminals/commands/gmod.h"
 #include "../../terminals/commands/reboot.h"
 
-const char* HelpCMD::info::name = "HELP";
+const char* HelpCMD::info::name = "help";
 const char* HelpCMD::info::desc = "Help command";
 
 /* table comming soon */

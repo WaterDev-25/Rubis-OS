@@ -3,7 +3,7 @@
 #include "../../terminals/commands/reboot.h"
 #include "../../kernel/syscall.h"
 
-const char* RebootCMD::info::name = "REBOOT";
+const char* RebootCMD::info::name = "reboot";
 const char* RebootCMD::info::desc = "Reboot command";
 
 void RebootCMD::exec(){

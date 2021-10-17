@@ -27,12 +27,19 @@ const char sclt[] = {
 extern int mode;
 char userinput[255];
 
+bool shift_pressed = false;
+bool caps_lock = false;
+
 void keyboard_handler(struct regs *r){
     unsigned char scancode;
 
     scancode = inb(0x60);
 
-    if (scancode & 0x80){ } else {
+    if (scancode & 0x80){
+        switch (scancode){
+            case 0xaa: shift_pressed = false; break;
+        }
+    } else {
         switch(scancode) {
             case 0x0E:
                 if(mode == 0){
@@ -51,11 +58,14 @@ void keyboard_handler(struct regs *r){
                     set_grh();
                     break;
                 }
+            case 0x2a: shift_pressed = true; break;
+            case 0x3a: caps_lock = !caps_lock; break;
             default:
                 if(mode == 0){
                     for(int i = 0; i < 255; i++){
                         if(userinput[i] == '\0'){
-                            userinput[i] = sclt[scancode];
+                            if(caps_lock | shift_pressed) userinput[i] = sclt[scancode] - 32;
+                            else userinput[i] = sclt[scancode];
                             printchr(userinput[i]);
                             break;
                         }
@@ -70,9 +80,4 @@ void keyboard_handler(struct regs *r){
 
 void keyboard_install(){
     irq_install_handler(1, keyboard_handler);
-    
-    /*
-    for(int i = 0; i < 255; i++){
-        userinput[i] = '\0';
-    }*/
 }

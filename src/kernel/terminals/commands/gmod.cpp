@@ -2,7 +2,7 @@
 #include "../../drivers/vga.h"
 #include "../../terminals/commands/gmod.h"
 
-const char* GmodCMD::info::name = "GMOD";
+const char* GmodCMD::info::name = "gmod";
 const char* GmodCMD::info::desc = "Graphic mode command";
 
 extern int mode;

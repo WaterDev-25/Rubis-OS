@@ -3,7 +3,7 @@
 #include "../../terminals/commands/shutdown.h"
 #include "../../kernel/syscall.h"
 
-const char* ShutdownCMD::info::name = "SHUTDOWN";
+const char* ShutdownCMD::info::name = "shutdown";
 const char* ShutdownCMD::info::desc = "Shutdown command";
 
 void ShutdownCMD::exec(){
