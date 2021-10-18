@@ -5,24 +5,7 @@
 #include "../maths/vec2.h"
 #include "../terminals/shell.h"
 #include "../utils/string.h"
-
-const char sclt[] = {
-    0, 0, '1', '2',
-    '3', '4', '5', '6',
-    '7', '8', '9', '0',
-    '-', '=', 0, 0,
-    'q', 'w', 'e', 'r',
-    't', 'y', 'u', 'i',
-    'o', 'p', '[', ']',
-    0, 0, 'a', 's',
-    'd', 'f', 'g', 'h',
-    'j', 'k', 'l', ';',
-    '\'', '`', 0, '\\',
-    'z', 'x', 'c', 'v',
-    'b', 'n', 'm', ',',
-    '.', '/', 0, '*',
-    0, ' '
-};
+#include "../utils/keyboardScanCode.h"
 
 extern int mode;
 char userinput[255];
@@ -31,9 +14,7 @@ bool shift_pressed = false;
 bool caps_lock = false;
 
 void keyboard_handler(struct regs *r){
-    unsigned char scancode;
-
-    scancode = inb(0x60);
+    uint8_t scancode = inb(0x60);
 
     if (scancode & 0x80){
         switch (scancode){
@@ -49,6 +30,10 @@ void keyboard_handler(struct regs *r){
                 }
             case 0x1c:
                 if(mode == 0){
+                    if(!strcmp(userinput, "\0")){
+                        set_grh();
+                        break;
+                    }
                     check_command(userinput);
                     for(int i = 0; i < 255; i++){
                         if(userinput[i] != '\0'){
